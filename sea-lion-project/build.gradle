@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+repositories {
+    maven {
+        url 'http://localhost:8081/repository/maven-central/'
+    }
+}
+
+dependencies {
+    compile 'commons-io:commons-io:2.6'
+ 
+    // Use JUnit test framework
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+}
+
+test {
+     useJUnitPlatform()
+}
