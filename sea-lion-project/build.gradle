@@ -1,8 +1,14 @@
-apply plugin: 'java'
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'net.selikoff.oraclecodeone.groovy'
+version = '0.0.1-SNAPSHOT'
 
 repositories {
     maven {
-        url 'http://localhost:8081/repository/maven-central/'
+      url "$nexusBaseUrl/repository/maven-central/"
     }
 }
 
@@ -16,4 +22,23 @@ dependencies {
 
 test {
      useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'snapshots'
+            url = "$nexusBaseUrl/repository/custom-snapshots"
+            credentials {
+                username = nexusUserName
+                password = nexusPassword
+            }
+        }
+    }
 }
