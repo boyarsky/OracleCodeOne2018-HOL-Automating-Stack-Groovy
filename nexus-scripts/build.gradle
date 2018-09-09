@@ -1,9 +1,7 @@
 apply plugin: 'groovy'
 
 repositories {
-    maven {
-        url 'http://localhost:8081/repository/maven-central/'
-    }
+     mavenCentral()
 }
 
 def nexusVersion = '3.13.0-01'
