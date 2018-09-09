@@ -57,6 +57,6 @@ job.save()
 def sa = ScriptApproval.get()
 // make a copy of the list to avoid concurrent modification exception
 def pending = sa.pendingScripts.collect() 
-pending.each { it -> sa.approveScript(it.hash)
+pending.each { sa.approveScript(it.hash)
 }
 println "Created job $job.fullName"
