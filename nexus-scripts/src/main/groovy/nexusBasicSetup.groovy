@@ -1,7 +1,8 @@
-import org.sonatype.nexus.script.plugin.*;
-import org.sonatype.nexus.repository.maven.*;
-import org.sonatype.nexus.repository.storage.*;
-import org.sonatype.nexus.blobstore.api.*;
+import org.sonatype.nexus.script.plugin.*
+import org.sonatype.nexus.security.*
+import org.sonatype.nexus.repository.maven.*
+import org.sonatype.nexus.repository.storage.*
+import org.sonatype.nexus.blobstore.api.*
 
 // uncomment when need autocomplete (comment for commit so Nexus uses built in variables)
 // RepositoryApi repository;
@@ -10,7 +11,7 @@ import org.sonatype.nexus.blobstore.api.*;
 // create repositories (using default blob-store since this is just a lab)
 repository.createMavenHosted("custom-snapshots", BlobStoreManager.DEFAULT_BLOBSTORE_NAME, true, VersionPolicy.SNAPSHOT, WritePolicy.ALLOW_ONCE, LayoutPolicy.STRICT)
 // release uses all the defaults so we don't have to specify all the parameters
-repository.createMavenHosted("custom-release")
+repository.createMavenHosted("custom-releases")
  
 
 // create a role with all Maven view/upload privileges
