@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+
+repositories {
+    maven {
+        url 'http://localhost:8081/repository/maven-central/'
+    }
+}
+
+def nexusVersion = '3.13.0-01'
+
+dependencies {
+    compile "org.sonatype.nexus:nexus-core:${nexusVersion}"
+    compile "org.sonatype.nexus:nexus-script:${nexusVersion}"
+    compile "org.sonatype.nexus:nexus-security:${nexusVersion}"
+    compile "org.sonatype.nexus.plugins:nexus-script-plugin:${nexusVersion}"
+}
+

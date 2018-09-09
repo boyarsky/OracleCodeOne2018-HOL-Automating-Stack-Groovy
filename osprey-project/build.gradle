@@ -2,8 +2,9 @@ apply plugin: 'java'
 
 repositories {
     maven {
-// for running on your machine  url 'http://localhost:8081/repository/maven-central/'
-        url 'http://nexus:8081/repository/maven-central/'
+// for running on your machine 
+ url 'http://localhost:8081/repository/maven-central/'
+//        url 'http://nexus:8081/repository/maven-central/'
     }
 }
 
