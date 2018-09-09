@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'net.selikoff.oraclecodeone.groovy'
+group = 'net.selikoff.oraclecodeone.groovy.osprey'
 version = '0.0.1-SNAPSHOT'
 
 repositories {
