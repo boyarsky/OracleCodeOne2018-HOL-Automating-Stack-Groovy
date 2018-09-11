@@ -6,6 +6,9 @@ import java.nio.charset.*;
 import org.apache.commons.io.*;
 
 public class SeaLion {
+
+	// the sea lions have lots of secrets!
+	public String secretValue;
 	
 	public String everything() throws IOException {
 		// yes this can be one without a library
