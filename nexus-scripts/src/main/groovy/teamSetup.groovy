@@ -4,13 +4,32 @@ import org.sonatype.nexus.security.*
 import org.sonatype.nexus.common.app.*;
 import org.sonatype.nexus.common.entity.*
 import org.sonatype.nexus.security.authz.*
+import org.sonatype.nexus.security.user.*
 
 // much of this code is based off of https://gist.github.com/nblair/1a0e05713c3edb7e5360c2b0222c7623
 
 // use container.lookup to fetch internal APIs we need to use
-def selectorManager = container.lookup(SelectorManager.class.name)
-def securitySystem = container.lookup(SecuritySystem.class.name)
-def authorizationManager = securitySystem.getAuthorizationManager('default')
+selectorManager = container.lookup(SelectorManager.class.name)
+securitySystem = container.lookup(SecuritySystem.class.name)
+authorizationManager = securitySystem.getAuthorizationManager('default')
+
+// -------------------------------------------------------------------------
+
+def addOrReplaceRole(role) {
+   def originalRoles = authorizationManager.listRoles()
+   if (originalRoles.grep { it.roleId == role.roleId }) {
+	   authorizationManager.deleteRole(role.roleId)
+   }
+   authorizationManager.addRole(role)
+}
+
+def addOrReplacePrivilege(privilege) {
+	def originalPrivileges = authorizationManager.listPrivileges()
+	if (originalPrivileges.grep { it.id == privilege.id }) {
+		authorizationManager.deletePrivilege(privilege.id)
+	}
+	authorizationManager.addPrivilege(privilege)
+ }
 
 // -------------------------------------------------------------------------
 // anonymous user cannot see osprey or sea lion code
@@ -23,7 +42,7 @@ def limitedAnonRole = new org.sonatype.nexus.security.role.Role(
 	privileges: [ 'nx-search-read', 'nx-repository-view-maven2-*-read' ],
 	roles: []
 )
-authorizationManager.addRole(limitedAnonRole)
+addOrReplaceRole(limitedAnonRole)
 
 // -------------------------------------------------------------------------
 
@@ -62,8 +81,8 @@ def ospreySnapshotPrivilege = new org.sonatype.nexus.security.privilege.Privileg
 	type: "repository-content-selector",
 	properties: ospreySnapshotProperties
 )
-authorizationManager.addPrivilege(ospreyReleasePrivilege)
-authorizationManager.addPrivilege(ospreySnapshotPrivilege)
+addOrReplacePrivilege(ospreyReleasePrivilege)
+addOrReplacePrivilege(ospreySnapshotPrivilege)
 
 // -------------------------------------------------------------------------
 // create a role with the snapshot and release privileges
@@ -76,10 +95,12 @@ def ospreyRole = new org.sonatype.nexus.security.role.Role(
 	privileges: [ ospreySnapshotPrivilege.id, ospreyReleasePrivilege.id ],
 	roles: []
 )
-authorizationManager.addRole(ospreyRole)
+addOrReplaceRole(ospreyRole)
 
 // -------------------------------------------------------------------------
 
 // add a local user account with the role
-security.addUser("olivia", "Olivia", "O", "olivia@none.com", true, "olivia", [ 'osprey-role', 'limited-anon' ])
-security.addUser("owen", "Owen", "O", "owen@none.com", true, "owen", [ 'osprey-role', 'limited-anon' ])
+if (! securitySystem.searchUsers(new UserSearchCriteria('olivia')))
+  security.addUser("olivia", "Olivia", "O", "olivia@none.com", true, "olivia", [ 'osprey-role', 'limited-anon' ])
+if (! securitySystem.searchUsers(new UserSearchCriteria('owen')))
+  security.addUser("owen", "Owen", "O", "owen@none.com", true, "owen", [ 'osprey-role', 'limited-anon' ])
