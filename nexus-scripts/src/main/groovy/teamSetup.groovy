@@ -44,6 +44,9 @@ def limitedAnonRole = new org.sonatype.nexus.security.role.Role(
 )
 addOrReplaceRole(limitedAnonRole)
 
+def anonUser = securitySystem.getUser('anonymous')
+
+
 // -------------------------------------------------------------------------
 
 // create content selector (if not already present)
