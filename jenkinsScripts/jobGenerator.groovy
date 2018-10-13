@@ -1,8 +1,6 @@
 import org.jenkinsci.plugins.scriptsecurity.scripts.*
 import jenkins.model.*
 
-
-def build = Thread.currentThread().executable
 def gitUrl = build.buildVariableResolver.resolve("gitUrl")
 def gitFolder = build.buildVariableResolver.resolve("gitFolder")
 
