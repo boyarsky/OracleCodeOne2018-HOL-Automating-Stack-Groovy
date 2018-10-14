@@ -38,3 +38,5 @@ auth.doAssignRole('projectRoles', 'authenticated', 'owen')
 
 instance.setAuthorizationStrategy(auth)
 instance.save()
+
+println 'Done'
