@@ -20,13 +20,13 @@ Oracle Code One – HOL4957
 
 [Step 5: Nexus System Scripting](lab-steps/step-5-nexus-system-scripting.md)
 
-[Step 6 – Create a Jenkins pipeline](lab-steps/step-6-jenkins-pipeline.md)
+[Step 6: Create a Jenkins pipeline](lab-steps/step-6-jenkins-pipeline.md)
 
-[Step 7 – Switch services (Optional)](lab-steps/step-7-switch-services.md)
+[Step 7: Switch services (Optional)](lab-steps/step-7-switch-services.md)
 
-[Step 8 – Creating a custom SonarQube rule](lab-steps/step-8-sonar.md)
+[Step 8: Creating a custom SonarQube rule](lab-steps/step-8-sonar.md)
 
-[Step 9 – Extra credit in Jenkins (Optional)](lab-steps/step-9-jenkins-extra-credit.md) 
+[Step 9: Extra credit in Jenkins (Optional)](lab-steps/step-9-jenkins-extra-credit.md) 
 
 [Appendix I: Cleanup](lab-steps/appendix-i-cleanup.md)
 
