@@ -107,3 +107,7 @@ if (! securitySystem.searchUsers(new UserSearchCriteria('olivia')))
   security.addUser("olivia", "Olivia", "O", "olivia@none.com", true, "olivia", [ 'osprey-role', 'limited-anon' ])
 if (! securitySystem.searchUsers(new UserSearchCriteria('owen')))
   security.addUser("owen", "Owen", "O", "owen@none.com", true, "owen", [ 'osprey-role', 'limited-anon' ])
+
+  
+  if (! securitySystem.searchUsers(new UserSearchCriteria('owen')))
+	  security.addUser("duke", "Duke", "O", "owen@none.com", true, "duke", [ 'osprey-role', 'limited-anon' ])
