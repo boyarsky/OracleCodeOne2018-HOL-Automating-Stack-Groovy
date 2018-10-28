@@ -18,9 +18,10 @@ Note that Jenkins was an offshoot of Hudson. The source code betrays this fact a
 
 1. In the Jenkins scripting console, write the following code
 
-**def instance = Jenkins.getInstance()**
-
-**println instance.class**
+````groovy
+def instance = Jenkins.getInstance()
+println instance.class
+````
 
 1. This prints out
 
@@ -36,17 +37,19 @@ class hudson.model.Hudson
 
 1. Now write the following code
 
-**def instance = Jenkins.getInstance()**
-
-**println instance.metaClass.methods\*.name.sort().unique()**
+````groovy
+def instance = Jenkins.getInstance()
+println instance.metaClass.methods\*.name.sort().unique()
+````
 
 1. The metaClass methods approach is a quick way to find out what methods are available on an object you currently have.
 
 1. You can even see the method signatures:
 
-**def instance = Jenkins.getInstance()**
-
-**println instance.metaClass.methods**
+````groovy
+def instance = Jenkins.getInstance()
+println instance.metaClass.methods
+````
 
 #### Tool 3 – Google
 
@@ -59,7 +62,7 @@ To help us keep track of who is who, we are going to give our users the same use
 1. Users are created in security realms. Run this code in the &quot;Script Console&quot; to create a user.  Remember, the &quot;Script Console&quot;  is available under &quot;Manage Jenkins&quot;.
 
 ````groovy
-def instance = Jenkins.getInstance()**
+def instance = Jenkins.getInstance()
 def realm = Jenkins.getInstance().securityRealm
 realm.createAccount('olivia', 'olivia')
 instance.save()

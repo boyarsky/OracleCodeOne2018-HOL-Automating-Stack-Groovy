@@ -16,7 +16,6 @@ println 'Hello Oracle Code One!'
 println GroovySystem.version
 ```
 3. The result is right below the text area:
-1. Add a Groovy build step
  ![text area](../images/step-2.1-result.png)
 
 
@@ -30,7 +29,7 @@ println GroovySystem.version
 1. Scroll down and click &quot;Ok&quot;
 
 1. Add a Groovy build step
- ![build step](../images/step-2.2-groovy-step.png)
+![build step](../images/step-2.2-groovy-step.png)
 
 1. Choose &quot;Groovy 2.X&quot; to run that Groovy version.s
 
@@ -59,8 +58,9 @@ This time we are going to write a script where you fill in the blank to print ou
 
 _Tip_: If you&#39;ve never used Groovy before, see the solution guide for how to do this. (also note that Groovy uses grep where Java uses filter)
 
-def list = [&#39;monday&#39;, &#39;wednesday&#39;, &#39;chocolate&#39;, &#39;friday&#39;]
-
-println \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+````groovy
+def list = ['monday', 'wednesday', 'chocolate', 'friday']
+println ______________________________________
+````
 
 Use the Jenkins admin script console to test your script until you are happy with it. Then create a job named &quot;days&quot; that runs the same Groovy code.

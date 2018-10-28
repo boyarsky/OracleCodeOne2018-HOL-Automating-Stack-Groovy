@@ -34,5 +34,7 @@ Oracle Code One – HOL4957
 
 [Appendix III: Useful References](lab-steps/appendix-iii-links.md)
 
+[Appendix IV: Running Nexus/Jenkins with different ports](appendix-1v-different-ports.md)
+
 
 

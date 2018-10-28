@@ -4,7 +4,7 @@
 
 Let&#39;s confirm what version of Groovy is being used.
 
-1. Login to Nexus (localhost:8081) using admin/admin123.
+1. Login to Nexus (localhost:8081 or the port of your choosing) using admin/admin123.
 
 1. Click the gear icon to get the administration options
  ![gear](../images/step-3.1-gear.png)
@@ -37,7 +37,7 @@ log.info GroovySystem.version
 1. Click Summary tab. Depending on how fast you are, it will either say Running or Waiting. Refresh if it is still running to confirm it completes.
 ![refresh](../images/step-3.1-refresh.png)
 
-1. In the left navigation go to Support \&gt; Logging \&gt; Log Viewer
+1. In the left navigation go to Support -> Logging -> Log Viewer
 
 1. Notice your logging is there:
  ![output](../images/step-3.1-output.png)
@@ -52,11 +52,11 @@ log.info GroovySystem.version
 
 2. Print the log file:
 
-**cd /nexus-data/log/tasks**
-
-**ls**
-
-**cat \*.log**
+````
+cd /nexus-data/log/tasks
+ls
+cat \*.log
+````
 
 3. Confirm you see 8 lines.
 
@@ -97,3 +97,5 @@ Check the output in both a browser (nexus log) and command line (task log).
 1. Run the task
 
 1. Check the output in both the browser and command line task log. Where do you see it?
+
+If you don't see the expected output, see the command in the solution guide.

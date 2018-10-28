@@ -8,8 +8,8 @@ import org.sonatype.nexus.security.user.*
 import org.sonatype.nexus.security.role.*
 
 // uncomment when need autocomplete (comment for commit so Nexus uses built in variables)
- RepositoryApi repository;
- SecurityApi security;
+ // RepositoryApi repository;
+ // SecurityApi security;
 
 repositoryManager = container.lookup(RepositoryManager.class.name)
 securitySystem = container.lookup(SecuritySystem.class.name)

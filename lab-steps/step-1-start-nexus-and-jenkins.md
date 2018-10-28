@@ -16,9 +16,11 @@ At the command line, run:
 
 _Note: If you&#39;ve run it in the past, type_ **docker start nexus** _instead_
 
+If port 8081 is in use and you can't stop the process on it, *see [note in appendix IV](appendix-1v-different-ports.md)*
+
 Validation
 
-In a browser, go to [http://localhost:8081](http://localhost:8081). If you do not see Nexus, wait 15 seconds and try again. (It could take up to a minute)
+In a browser, go to [http://localhost:8081](http://localhost:8081). Or using the port you set up in the last step. If you do not see Nexus, wait 15 seconds and try again. (It could take up to a minute)
 
 Tips if this doesn't work:
 1. Use IP address (some corporate firewalls worked with this)
@@ -34,15 +36,18 @@ At the command line, run
 
 _Note: If you&#39;ve run it in the past, type_ **docker start jenkins** _instead_
 
+If port 8080 is in use and you can't stop the process on it, use a different port. We used 8090 here, but you can pick any port. Remember which port you chose as you'll need to change it later.
+**docker run -d -p 8090:8080 --name jenkins --network hol-network jenkins/jenkins:2.146**
+
 ### 1.4 – Verify Jenkins is Running
 
-1. In a browser, go to [http://localhost:8080](http://localhost:8080)
+1. In a browser, go to [http://localhost:8080](http://localhost:8080) (remember to change the port if you used a different one)
 2. You should see the following screen:
  ![jenkins loading](../images/step-1.4-jenkins.png)
 
 1. Following this page, you will see a page asking for the administrator password.  Once you see this, you can continue to the next step.
 
-If you don&#39;t see this screen, you either do not have Jenkins running or may have sa different service running on port 8080.
+If you don&#39;t see this screen, you either do not have Jenkins running or may have a different service running on port 8080.
 
 ### 1.5 - Unlock Jenkins
 
@@ -52,7 +57,7 @@ If you don&#39;t see this screen, you either do not have Jenkins running or may 
 1. Print the password:
 **cat /var/jenkins\_home/secrets/initialAdminPassword**
 
-1. Back in your browser visit [http://localhost:8080](http://localhost:8080) again.
+1. Back in your browser visit [http://localhost:8080](http://localhost:8080) again. (remember to change the port if you used a different one)
  ![jenkins loading](../images/step-1.5-start-jenkins.png)
 
 1. Paste in the password and click continue
@@ -62,7 +67,7 @@ If you don&#39;t see this screen, you either do not have Jenkins running or may 
 
 1. In the command line window, type exit to get out of bash.
 
-1. Pick the username admin for the admin test user. Choose a password for this user and note in for later. Enter all the fields and click &quot;Save and Continue&quot; (Tip: Use)
+1. Pick the username admin for the admin test user. Choose a password for this user and note in for later. Enter all the fields and click &quot;Save and Continue&quot; 
 
 1. Click to Finish
 
@@ -80,7 +85,7 @@ We need two additional plugins to create jobs for this lab.
 1. Click the &quot;Available&quot; tab
 
 1. Select **Groovy** , as well as the **Role-based Authorization Strategy** plugin. We&#39;ll use that one later. 
- ![jenkins plugins - groovy](../images/step-1.6-plugins-groovy.png)
+![jenkins plugins - groovy](../images/step-1.6-plugins-groovy.png)
 ![jenkins plugins - roles](../images/step-1.6-plugins-roles.png)
 
 1. Click the button &quot;Download now and install after restart&quot;
@@ -102,4 +107,4 @@ We need two additional plugins to create jobs for this lab.
 1. Set the name to &quot;Groovy 2.X&quot;. Leave the version as the default. (This gives us a slightly different of Groovy, but this is fine as long as we stay on the 2.X series.)
 ![configure groovy](../images/step-1.6-config-groovy.png)
 
-1. Click &quot;Save&quot; (scroll down/right if you don&#39;t see the save button.
+1. Click &quot;Save&quot; (scroll down if you don&#39;t see the save button.)

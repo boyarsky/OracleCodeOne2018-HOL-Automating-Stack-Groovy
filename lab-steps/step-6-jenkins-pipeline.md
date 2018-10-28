@@ -29,9 +29,10 @@ Teams at our imaginary company always start out with the same types of build –
 
 1. Add a build step to execute a system groovy script.
 
-1. Paste in the script from
-
+1. Paste in the script from this URL
 [https://github.com/boyarsky/OracleCodeOne2018-HOL-Automating-Stack-Groovy/blob/master/jenkinsScripts/jobGenerator.groovy](https://github.com/boyarsky/OracleCodeOne2018-HOL-Automating-Stack-Groovy/blob/master/jenkinsScripts/jobGenerator.groovy)
+
+*if you are running with a Nexus port other than 8081, see [note in appendix IV](appendix-1v-different-ports.md)*
 
 8. Save
 
@@ -70,7 +71,7 @@ Now that we have jobs and security, we can try everything out.
 
 1. Logon to Nexus as an admin.
 
-1. Click Browse \&gt; Custom Snapshots
+1. Click Browse -> Custom Snapshots
 
 1. Then drill down and see both artifacts were deployed.
  ![nexus all](../images/step-6.4-all.png)
