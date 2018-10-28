@@ -21,7 +21,7 @@ docker rm nexus
 
 #### Remove images:
 ```
-docker images**
+docker images
 docker rmi <hash1>
 docker rmi <hash2>
 docker rmi <hash3>

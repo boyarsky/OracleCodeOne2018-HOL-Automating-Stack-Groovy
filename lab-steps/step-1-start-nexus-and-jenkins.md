@@ -21,10 +21,10 @@ Validation
 In a browser, go to [http://localhost:8081](http://localhost:8081). If you do not see Nexus, wait 15 seconds and try again. (It could take up to a minute)
 
 Tips if this doesn't work:
-# Use IP address (some corporate firewalls worked with this)
-# Turn off McAfee (if you feel comfortable) - it uses this port on Windows
-# Check your docker process is running on the OS level
-# If on Windows, check hardware virtualization is enabled (in BIOS)
+1. Use IP address (some corporate firewalls worked with this)
+1. Turn off McAfee (if you feel comfortable) - it uses this port on Windows
+1. Check your docker process is running on the OS level
+1. If on Windows, check hardware virtualization is enabled (in BIOS)
 
 ### 1.3 - Install Jenkins
 

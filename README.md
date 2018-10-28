@@ -24,7 +24,7 @@ Oracle Code One – HOL4957
 
 [Step 7: Switch services (Optional)](lab-steps/step-7-switch-services.md)
 
-[Step 8: Creating a custom SonarQube rule](lab-steps/step-8-sonar.md)
+[Step 8: Creating a custom SonarQube rule (Optional)](lab-steps/step-8-sonar.md)
 
 [Step 9: Extra credit in Jenkins (Optional)](lab-steps/step-9-jenkins-extra-credit.md) 
 
