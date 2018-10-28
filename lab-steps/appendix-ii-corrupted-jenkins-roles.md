@@ -12,8 +12,11 @@ If you manage to change permissions so admin no longer has admin rights, you hav
 
 2. Install your favorite text editor. We choose vim
 
-**apt-get update**
-**apt-get install –y vim**
+Note: If you get an error running the following, omit the -y flag
+````
+apt-get update
+apt-get install –y vim
+````
 
 3. Open the config.xml
 
@@ -30,8 +33,11 @@ If you manage to change permissions so admin no longer has admin rights, you hav
    <disableSignup>true</disableSignup>
    <enableCaptcha>false</enableCaptcha>
 </securityRealm>
-
 ```
+Alternatively, you can set the assigned side to your id in the XML.
+
+Note: You might need to re-enter the initial password from /var/jenkins_home/secrets
+
 5. Exit your text editor
 
 6. Exit bash
