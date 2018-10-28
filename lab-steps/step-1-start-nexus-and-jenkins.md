@@ -62,7 +62,7 @@ If you don&#39;t see this screen, you either do not have Jenkins running or may 
 
 1. In the command line window, type exit to get out of bash.
 
-1. Pick a username/password for your admin test user. Enter all the fields and click &quot;Save and Continue&quot;
+1. Pick the username admin for the admin test user. Choose a password for this user and note in for later. Enter all the fields and click &quot;Save and Continue&quot; (Tip: Use)
 
 1. Click to Finish
 
